@@ -1,6 +1,17 @@
 Agoria::Application.routes.draw do
+  
+  resources :events
+
+  resources :calendars
+
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   devise_for :users
 
+  root :to => 'high_voltage/pages#show', :id => 'home'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,21 @@
+<h2>Mot de passe oublié?</h2>
+<div class="form-horizontal">
+<p>Encodez, ci-dessous, votre adresse email. Un email d'instruction vous sera envoyé avec la marche à suivre pour définir un nouveau mot de passe.</p><br>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+ 
+  <div class="control-group">
+  		<%= f.label :email, :class => "control-label" %>
+		<div class="controls">
+  			<%= f.email_field :email %>
+  		</div>
+  	</div>
+  	<div clas="control-group">
+		<div class="controls">
+			<a href="/users/sign_up" class="purple">S'inscrire</a> - <a href="/users/sign_in" class="purple">Se connecter?</a><br><br>
+		</div>
+	</div>		
+  <div align="center"><%= f.submit "Changer mon mot de passe", :class => "button_submit" %></div>
+<% end %>
+</div>

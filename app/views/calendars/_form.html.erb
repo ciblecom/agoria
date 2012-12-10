@@ -1,0 +1,13 @@
+<%= form_for @calendar do |f| %>
+<div class="clearfix">
+  	<% @calendar.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </div>	
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <%= f.hidden_field :user_id %>
+  <p><%= f.submit %></p>
+<% end %>

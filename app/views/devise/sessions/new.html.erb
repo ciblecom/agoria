@@ -1,0 +1,36 @@
+<h2>Connexion</h2>
+<div class="form-horizontal">
+<%= form_for(resource, :class => "form-horizontal", :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  
+  	<div class="control-group">
+  		<%= f.label :email, :class => "control-label" %>
+		<div class="controls">
+  			<%= f.email_field :email %>
+  		</div>
+  	</div>
+
+	<div class="control-group">
+	  	 <%= f.label :password , :class => "control-label" %>
+	  	 <div class="controls">
+	  		<%= f.password_field :password %>
+	  	</div>
+	</div>
+	
+	<% if devise_mapping.rememberable? -%>
+	<div class="control-group">
+	  	 <div class="controls">
+	  	 	<label class="checkbox"><%= f.check_box :remember_me %> Se souvenir de moi</label>
+	  	</div>
+	</div>
+	<% end -%>
+	
+	<div clas="control-group">
+		<div class="controls">
+		<a href="/users/sign_up" class="purple">S'inscrire</a> - <a href="/users/password/new" class="purple">Mot de passe oublié?</a><br><br>
+		</div>
+	</div>
+
+  <div align="center"><%= f.submit "Connexion", :class => "button_submit" %></div>
+<% end %>
+</div>
+

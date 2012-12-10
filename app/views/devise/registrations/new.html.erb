@@ -1,0 +1,44 @@
+<h2>Inscription</h2>
+<p>Merci de votre intérêt à participer à la campagne « tousensemblepourmonemploi ». L’accès et l’utilisation du calendrier et des visuels sont subordonnés à l’autorisation de la direction de votre entreprise ou de votre organisation. Nous traitons dès lors votre demande selon ces conditions et vous confirmons prochainement votre accès. Meilleures salutations</p>
+<br><br>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+  <div class="clearfix">
+  	<%= devise_error_messages! %><br>
+  </div>	
+  
+  <div class="clearfix">
+  	<div class="left"><%= f.label :lastname%>
+  	<%= f.text_field :lastname %></div>	
+  
+  	<div class="left rightInput"><%= f.label :firstname %>
+  	<%= f.text_field :firstname %></div>	
+  </div>
+  <div class="clearfix">	
+  	<div class="left"><%= f.label :company %>
+  	<%= f.text_field :company %></div>
+  
+ 
+	<div class="left rightInput"><%= f.label :function %>
+	<%= f.text_field :function %></div>
+  </div>
+  <div class="clearfix">
+	  <div class="left"><%= f.label :password %>
+	  <%= f.password_field :password %></div>
+	
+	  <div class="left rightInput"><%= f.label :password_confirmation %>
+	  <%= f.password_field :password_confirmation %></div>
+  </div>
+  <div class="clearfix">	
+	<div class="left "><%= f.label :email %>
+	<%= f.email_field :email %></div>
+
+	 <div  class="left rightInput checkbox"><%= f.label :optin ,'J’accepte les conditions générales d’utilisation'%>
+	 <%= f.check_box :optin %></div>
+  </div>
+  
+  <hr>
+  <div><%= f.submit "Créer mon compte", :class => "button_submit" %></div>
+<% end %>
+
+<a href="/users/sign_in">Se connecter</a> - <a href="/users/password/new">Mot de passe oublié?</a>

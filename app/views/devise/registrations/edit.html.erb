@@ -1,0 +1,49 @@
+<h2>Modification mon compte</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+
+  <div class="clearfix">
+  	<%= devise_error_messages! %><br>
+  </div>	
+  
+  <div class="clearfix">
+  	<div class="left"><%= f.label :lastname%>
+  	<%= f.text_field :lastname %></div>	
+  
+  	<div class="left rightInput"><%= f.label :firstname %>
+  	<%= f.text_field :firstname %></div>	
+  </div>
+  <div class="clearfix">	
+  	<div class="left"><%= f.label :company %>
+  	<%= f.text_field :company %></div>
+  
+ 
+	<div class="left rightInput"><%= f.label :function %>
+	<%= f.text_field :function %></div>
+  </div>
+  <% if !f.object.encrypted_password.present? && !user_signed_in? %>	
+  <div class="clearfix">
+	  <div class="left"><%= f.label :password %>
+	  <%= f.password_field :password %></div>
+	
+	  <div class="left rightInput"><%= f.label :password_confirmation %>
+	  <%= f.password_field :password_confirmation %></div>
+  </div>
+  <%end%>
+  <div class="clearfix">	
+	<div class="left "><%= f.label :email %>
+	<%= f.email_field :email %></div>
+
+	 <% if !f.object.encrypted_password.present? && !user_signed_in? %><div  class="left rightInput checkbox"><%= f.label :optin ,'J’accepte les conditions générales d’utilisation'%>
+	 <%= f.check_box :optin %></div><%end%>
+  </div>
+  
+  <hr>
+  <div><%= f.submit "Modifier mon compte", :class => "button_submit" %></div>
+<% end %>
+
+<h4>Supprimer mon compte</h4>
+
+<p>Si vous le désirez vous pouvez <%= link_to "supprimer votre compte", registration_path(resource_name), :data => { :confirm => "Êtes-vous sûr?" }, :method => :delete %>.</p>
+
+<%= link_to "Retour", :back %>
