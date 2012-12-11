@@ -8,6 +8,7 @@ class CalendarsController < ApplicationController
 
   def new
     @calendar = Calendar.new
+    @calendar.events.build
   end
 
   def create
@@ -21,10 +22,12 @@ class CalendarsController < ApplicationController
 
   def edit
     @calendar = Calendar.find(params[:id])
+    @events = @calendar.events
   end
 
   def update
     @calendar = Calendar.find(params[:id])
+    
     if @calendar.update_attributes(params[:calendar])
       redirect_to calendars_url, :notice  => "Successfully updated calendar."
     else

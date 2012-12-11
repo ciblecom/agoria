@@ -31,7 +31,7 @@
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>    
   </head>
-  	<body class="<% if current_page?(root_path) %>home<% else %>page<% end %>">
+  	<body class="<% if current_page?(root_path) %>homer<%else%>page<% end %> <%= yield :class %>">
     	<%= render 'layouts/messages' %>	
 		<div id="wrapper">
 			<%= render 'layouts/header' %>

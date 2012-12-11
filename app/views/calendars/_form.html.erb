@@ -1,13 +1,39 @@
-<%= form_for @calendar do |f| %>
+<% content_for :class, "calendar" %>
+
+<%= form_for @calendar, :html => {:multipart => true} do |f| %>
 <div class="clearfix">
   	<% @calendar.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
   </div>	
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
+  
+  <div class="contenerCal one">
+    <%= f.label :name, "Titre" %><br />
+    <%= f.text_field :name, :value => current_user.company.downcase.tr(" ", "_")+"_"+Date.today.to_s, :class => 'input-xxlarge' %>
+  </div>
+	
+	<div class="contenerCal two">
+  	<%= f.label :name, "Thème" %><br />
+	</div>
+
+  <div class="contenerCal three">
+  	<%= f.label :logo, "Insérer mon logo" %> <span>(110x100 pixels)</span><br />
+  	<%= f.file_field :logo %>
+  </div>
+
+  <div class="contenerCal four">
+    <%= f.label :description, 'Editer le contenu texte proposé' %><br />
+    <%= f.text_area :description, :value => "Pour préserver notre emploi, nous devons satisfaire le client. C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.Parce que nous sommes au service du client. Pas l'inverse. Mon emploi en dépend !" %>
+  </div>
+
+  <div class="contenerCal five">	
+  		<%= f.label :events, "Ajouter vos évenements" %><br>
+	<%= f.fields_for :events do |builder| %>
+	  <%= render 'event_fields', :f => builder %>
+	<% end %>
+	
+    <p><%= link_to_add_fields "Ajouter un évènement", f, :events %></p>
+  </div>  
   <%= f.hidden_field :user_id %>
   <p><%= f.submit %></p>
 <% end %>

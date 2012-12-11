@@ -11,7 +11,6 @@ end
 
 gem 'sass-rails'
 gem "compass-rails"
-gem 'bootstrap-sass'
 
 group :production do
   gem 'pg', '0.12.2'
