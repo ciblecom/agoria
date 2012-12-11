@@ -1,14 +1,17 @@
 source 'https://rubygems.org'
 
-# General gems
 gem 'rails', '3.2.5'
+
 gem 'jquery-rails'
 
 group :assets do
-    gem 'sass-rails',   '~> 3.2.3'
     gem 'coffee-rails', '~> 3.2.1'
     gem 'uglifier', '>= 1.0.3'
 end
+
+gem 'sass-rails'
+gem "compass-rails"
+gem 'bootstrap-sass'
 
 group :production do
   gem 'pg', '0.12.2'
@@ -25,7 +28,6 @@ group :test do
   gem "mocha"
 end
 
-gem 'twitter-bootstrap-rails'
 
 # Users connection and managing
 gem "cancan"
