@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= bootstrap
+//= require jquery.ui.datepicker
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales/fr-FR
 
 function remove_fields(link) {
   $(link).prev("input[type=hidden]").val("1");
@@ -23,4 +26,20 @@ function add_fields(link, association, content) {
   var new_id = new Date().getTime();
   var regexp = new RegExp("new_" + association, "g")
   $(link).parent().before(content.replace(regexp, new_id));
+  $.datepicker.setDefaults( $.datepicker.regional[ "" ] );
+	$( ".datepicker" ).datepicker( $.datepicker.regional[ "fr" ] );
 }
+
+
+
+$(document).ready(function() {
+	$(function() {
+	$.datepicker.setDefaults( $.datepicker.regional[ "" ] );
+	$( ".datepicker" ).datepicker( $.datepicker.regional[ "fr" ] );
+});
+
+$('.wysihtml5').each(function(i, elem) {
+    $(elem).wysihtml5();
+  });
+
+});    

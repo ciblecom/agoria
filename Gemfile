@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.5'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :assets do
     gem 'coffee-rails', '~> 3.2.1'
@@ -11,6 +12,8 @@ end
 
 gem 'sass-rails'
 gem "compass-rails"
+gem 'bootstrap-wysihtml5-rails'
+gem 'wicked_pdf'
 
 group :production do
   gem 'pg', '0.12.2'

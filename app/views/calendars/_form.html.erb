@@ -23,7 +23,7 @@
 
   <div class="contenerCal four">
     <%= f.label :description, 'Editer le contenu texte proposé' %><br />
-    <%= f.text_area :description, :value => "Pour préserver notre emploi, nous devons satisfaire le client. C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.Parce que nous sommes au service du client. Pas l'inverse. Mon emploi en dépend !" %>
+    <%= f.text_area :description, :class => "wysihtml5", :value => "Pour préserver notre emploi, nous devons satisfaire le client. C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.Parce que nous sommes au service du client. Pas l'inverse. Mon emploi en dépend !" %>
   </div>
 
   <div class="contenerCal five">	
@@ -35,5 +35,5 @@
     <p><%= link_to_add_fields "Ajouter un évènement", f, :events %></p>
   </div>  
   <%= f.hidden_field :user_id %>
-  <p><%= f.submit %></p>
+  <div><%= f.submit "Enregistrer", :class => "button_submit" %></div>
 <% end %>

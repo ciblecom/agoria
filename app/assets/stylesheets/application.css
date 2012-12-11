@@ -10,7 +10,10 @@
  *
  *= require_self
  *= require_tree .
+ *= require jquery.ui.all
+*= require bootstrap-wysihtml5
  */
+ 
 
 @import "bootstrap";
 
@@ -74,6 +77,10 @@ background:#fff url(bgAll.jpg) top center repeat-y;
 	background:#fff url(five.png) bottom left no-repeat;
 }
 
+.calendar #main .contenerCal.five select{
+	width:70px;
+}
+
 .remevent{
 	display:inline-block !important;
 	background:none !important;
@@ -81,6 +88,7 @@ background:#fff url(bgAll.jpg) top center repeat-y;
 	margin:0px 0 0 5px !important;
 	font: normal 12px/20px sans-serif !important;
 	text-transform:none !important;
+	width:100px !important;
 }
 
 .reminput{
@@ -193,6 +201,21 @@ header h1{
 	background:transparent url(button_on.png) top left no-repeat;
 }
 
+a.button_submit{
+	display:block;
+	background:transparent url(button_off.png) top left no-repeat;
+	border:0;
+	font:bold 20px/1em  'Lato', sans-serif;
+	text-transform:uppercase;
+	color:#fff !important;
+	width:321px !important;
+	padding-top:18px;
+	padding-bottom:32px;	
+}
+
+a.button_submit:hover{
+	text-decoration:none;
+}
 
 /*********************************************/
 /* FOOTER
@@ -336,5 +359,28 @@ a{
 	font-size:13px !important;
 	margin:0px 0 15px 0 !important;
 	padding:0px !important;
+}
+
+
+
+@media print {
+  body {
+    background-color: #FFF;
+  }
+
+  #container {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  #line_items {
+    page-break-before: always;
+  }
+  
+  #pdf_link {
+    display: none;
+  }
 }
       

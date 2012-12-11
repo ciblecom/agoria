@@ -1,7 +1,6 @@
 <p>
-  <%= f.text_field :name %>
-  <%= f.text_field :date %>
-  
+  <%= f.text_field :name, :class => "input-medium" %>
+  <%= f.date_select :datee, :class => "input-small", :order => [:day, :month, :year] , :required => true, :use_month_numbers => true, :start_year => 2013 %>
   <%= f.check_box :_destroy, :class => "reminput" %>
   <%= f.label :_destroy, "Supprimer", :class => "remevent checkbox inline" %>
 </p>
