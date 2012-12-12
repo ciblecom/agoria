@@ -4,6 +4,6 @@ class AddLastameFirstnameToUsers < ActiveRecord::Migration
     add_column :users, :firstname, :string
     add_column :users, :company, :string
     add_column :users, :function, :string
-    add_column :users, :optin, :boolean, :default => 0
+    add_column :users, :optin, :boolean, :default => false
   end
 end
