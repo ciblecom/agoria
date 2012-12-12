@@ -23,7 +23,7 @@ class CalendarsController < ApplicationController
                            :bottom  => 5,
                            :left    => 5,
                            :right   => 5},
-                 :no_background => false,
+                 :no_background => true,
                  :lowquality  => true         
       end
     end    
