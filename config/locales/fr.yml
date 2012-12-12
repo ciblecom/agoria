@@ -317,7 +317,6 @@ fr:
       accepted: "doit être accepté(e)"
       empty: "doit être rempli(e)"
       blank: "doit être rempli(e)"
-      blank: "doit être rempli(e)"
       too_long:
         one: "est trop long (pas plus d'un caractère)"
         other: "est trop long (pas plus de %{count} caractères)"

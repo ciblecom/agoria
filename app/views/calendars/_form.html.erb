@@ -27,7 +27,7 @@
   <div class="contenerCal three">
   	<%= f.label :logo, "Insérer mon logo" %><br />
   	<%= f.file_field :logo %> 
-  	<%if  @calendar.logo.medium %>
+  	<%if !@calendar.logo.medium == 'medium_default.png' %>
   	<div>
   		<%= image_tag(@calendar.logo.medium.to_s) %>
   	</div>
