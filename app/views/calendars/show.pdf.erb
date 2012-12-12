@@ -1,3 +1,4 @@
+# encoding: UTF-8
 <% content_for :js do %>
 <%= javascript_include_tag "fullcalendar.min" %>
 <%end%>
@@ -6,6 +7,11 @@
 <div class="document">
     <%=@calendar.name%>
     <%= image_tag("http://static3.7sur7.be/static/photo/2012/16/1/6/20120108165813/media_xll_4554981.jpg") %>
+    <div id="banner"> 
+    	<% logoComp =  %>
+    	<div id="logocompany"><%= image_tag(@calendar.logo.to_s) %></div>
+    	<div id="description"><%=@calendar.description%></div>
+    </div>
     <table id="calendar">
 	<tr>
 	   <th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th> <th>Vendredi</th><th>Samedi</th><th>Dimanche</th>
