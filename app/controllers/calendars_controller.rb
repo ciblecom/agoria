@@ -15,8 +15,8 @@ class CalendarsController < ApplicationController
           render :pdf => "file_name",
                  :template => 'calendars/show.pdf.erb',
                  :layout => 'pdf',
-                 :page_size  => 'A3',
-                 :show_as_html => true
+                 :page_size  => 'A3'
+                 #:show_as_html => true,
                  #:save_to_file  => Rails.root.join('pdfs', "#{@calendar.name}.pdf"),
                  
       end
