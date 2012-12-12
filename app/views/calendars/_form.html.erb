@@ -37,7 +37,7 @@
   <div class="contenerCal four">
     <%= f.label :description, 'Editer le contenu texte proposé' %><br />
      <% if @calendar.description.nil?
-    	@calendar.description = "<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>"
+    	@calendar.description = "<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. <br>Et sans travail, pas d'emploi. Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.<br>Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>"
     	end	
     %>
     <%= f.text_area :description,:rows => 10, :class => "wysihtml5" %>
