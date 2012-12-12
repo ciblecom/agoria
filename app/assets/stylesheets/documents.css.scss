@@ -3,4 +3,25 @@
   width: 210mm -21mm;
   margin:0px;
  color:#ff0000;
+ background:#cd592e;
+
+}
+
+
+#banner{
+  margin: 20px 25px;
+ 
+  
+}
+
+#calendar{margin:20px 25px;}
+
+#calendar th{ width:200px; color:#fff; text-align:left;}
+
+#calendar td{ width:200px; height:100px; background:#fff; text-align:left; margin:5px; vertical-align:top; padding:10px; color:#cd592e;}
+
+#calendar div{ color:#000;}
+
+#calendar td.offset{
+  background:none;
 }

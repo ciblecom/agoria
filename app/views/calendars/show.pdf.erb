@@ -1,33 +1,43 @@
-# encoding: UTF-8
 <% content_for :js do %>
 <%= javascript_include_tag "fullcalendar.min" %>
 <%end%>
 <%= wicked_pdf_stylesheet_link_tag "documents" %>
 
 <div class="document">
-    <%=@calendar.name%>
-    <%= image_tag("http://static3.7sur7.be/static/photo/2012/16/1/6/20120108165813/media_xll_4554981.jpg") %>
+    <%= image_tag("", :width => "100%") %>
+    <!--http://static3.7sur7.be/static/photo/2012/16/1/6/20120108165813/media_xll_4554981.jpg-->
     <div id="banner"> 
-    	<% logoComp =  %>
-    	<div id="logocompany"><%= image_tag(@calendar.logo.to_s) %></div>
-    	<div id="description"><%=@calendar.description%></div>
+    	<table width="100%;">
+    		<tr>
+    			<td width='25%'><%= image_tag(@calendar.logo.medium.to_s) %></td>
+    			<td align="right" valign="top" style="color:#fff;font-size:18px !important;"><%=@calendar.description.html_safe%></td>
+    		</tr>
+    	</table>	
     </div>
-    <table id="calendar">
+    <table id="calendar" cellspacing="10">
 	<tr>
 	   <th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th> <th>Vendredi</th><th>Samedi</th><th>Dimanche</th>
 	</tr>
 	<tr>
-		<% @beginning_of_month = Date.civil(2012, 12, 1) %>
-		<% @end_of_month = Date.civil(2012, 12, -1) %>
+		<% @beginning_of_month = Date.civil(2013, 1, 1) %>
+		<% @end_of_month = Date.civil(2013, 1, -1) %>
 		<% (@beginning_of_month..@end_of_month).each do |d| %>
 		<% if d == @beginning_of_month %>
 			<% d.wday.times do %> 
-				<td class=‘offset’></td> 
+				<td class="offset"></td> 
 			<% end %>
 		<% end %>
-		<% if d.wday == 1 %> </tr><tr> <% end %>
-		<td> <%= d.day %> </td>
+		<% if d.wday == 0 %> </tr><tr> <% end %>
+		<td> <%= d.day %>
+			<% @calendar.events.each do |e| %>
+			<% @myday = e.datee.strftime('%d') %>
+				<% if @myday == d.day.to_s %>
+				 	<div><%= e.name %></div>
+				<%end%>
+			<%end%>	
+	    </td>
 		<% end %>
 	</tr>
 </table>
+<%= image_tag("footer1.jpg", :width => "100%") %>
 </div>

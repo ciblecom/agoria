@@ -9,11 +9,19 @@
   
   <div class="contenerCal one">
     <%= f.label :name, "Titre" %><br />
-    <%= f.text_field :name, :value => current_user.company.downcase.tr(" ", "_")+"_"+Date.today.to_s, :class => 'input-xxlarge' %>
+    <%= f.text_field :name, :value => current_user.company.downcase.tr(" ", "_")+"_"+Date.today.to_s, :class => 'input-xlarge' %>
   </div>
 	
 	<div class="contenerCal two">
   	<%= f.label :name, "Thème" %><br />
+  	<div class="twoone">
+  		<h3 >Télécharger le calendrier et le thème du mois</h3>
+  		<%= image_tag('visu1_small.jpg') %>
+  	</div>
+  	<div class="twotwo">
+  		<h3 >télécharger uniquement le visuel</h3>
+  	</div>
+  	
 	</div>
 
   <div class="contenerCal three">
@@ -23,7 +31,11 @@
 
   <div class="contenerCal four">
     <%= f.label :description, 'Editer le contenu texte proposé' %><br />
-    <%= f.text_area :description, :class => "wysihtml5", :value => "Pour préserver notre emploi, nous devons satisfaire le client. C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.Parce que nous sommes au service du client. Pas l'inverse. Mon emploi en dépend !" %>
+     <% if @calendar.description.nil?
+    	@calendar.description = "<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>"
+    	end	
+    %>
+    <%= f.text_area :description, :class => "wysihtml5" %>
   </div>
 
   <div class="contenerCal five">	

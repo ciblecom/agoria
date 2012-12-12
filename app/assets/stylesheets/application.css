@@ -53,7 +53,7 @@ background:#fff url(bgAll.jpg) top center repeat-y;
 
 .calendar #main .contenerCal label{
 	padding-left:35px;
-	font: bold 26px/45px 'Lato', sans-serif;
+	font: bold 24px/45px 'Lato', sans-serif;
 	text-transform:uppercase;
 	vertical-align:baseline !important;
 	display:block;
@@ -79,6 +79,34 @@ background:#fff url(bgAll.jpg) top center repeat-y;
 
 .calendar #main .contenerCal.five select{
 	width:70px;
+}
+
+
+.twoone, .twotwo{
+	display:inline-block;
+	width:250px;
+	vertical-align:top;
+}
+
+.twotwo{margin-left:15px;}
+
+.twoone h3{
+	background:#fff url(twoone.png) top left no-repeat;
+}
+.twotwo h3{
+	background:#fff url(twotwo.png) top left no-repeat;
+}
+
+.twoone h3, .twotwo h3{
+	padding-left:35px;
+	font: normal 14px/1em 'Lato', sans-serif;
+	text-transform:uppercase;
+}
+
+
+
+.twoone img, .twotwo img{
+	border:5px #c1c1c1 solid;
 }
 
 .remevent{
@@ -239,6 +267,15 @@ text-align: right;
 float:right;/*
 margin-top:-75px;
 margin-right:10px;*/
+}
+
+
+.calendar footer a {
+width:95px;
+display:block;
+position:absolute;
+top:200px;
+margin-left:450px;
 }
 
 /*********************************************/
