@@ -16,7 +16,7 @@ class CalendarsController < ApplicationController
                  :template => 'calendars/show.pdf.erb',
                  :page_size  => 'A3',
                  #:show_as_html => true,
-                 :save_to_file  => Rails.root.join('public/pdfs', "#{@calname}.pdf"),
+                 #:save_to_file  => Rails.root.join('public/pdfs', "#{@calname}.pdf"),
                  :margin => {:top                => 5,                     # default 10 (mm)
                            :bottom             => 5,
                            :left               => 5,
