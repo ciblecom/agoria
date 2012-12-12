@@ -1,26 +1,29 @@
 .document {
-  height: 297mm - 23mm;
-  width: 210mm -21mm;
-  margin:0px;
  color:#ff0000;
- background:#cd592e;
+ background:#cd592e !important;
+
+}
+
+.body {
+ 
+ background:#cd592e !important;
 
 }
 
 
 #banner{
   margin: 20px 25px;
- 
+ background:#cd592e !important;
   
 }
 
-#calendar{margin:20px 25px;}
+#calendar{margin:20px 25px; background:#cd592e;}
 
-#calendar th{ width:155px; color:#fff; text-align:left; font-weight:normal; text-transform:uppercase; }
+#calendar th{ width:161px; color:#fff; text-align:left; font-weight:normal; text-transform:uppercase; }
 
-#calendar td{ width:155px; height:100px; background:#fff; text-align:left; margin:5px; vertical-align:top; padding:10px; color:#cd592e;}
+#calendar td{ width:161px; height:100px; background:#fff; text-align:left; margin:5px; vertical-align:top; padding:10px; color:#cd592e;}
 
-#calendar div{ color:#949494; text-align:center; font-weight:bold; 
+#calendar div{ color:#949494; text-align:center; font-weight:bold; max-width:145px;
 }
 
 #calendar td.offset{

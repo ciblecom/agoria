@@ -9,15 +9,20 @@ class CalendarsController < ApplicationController
   
   def show
     @calendar = Calendar.find(params[:id])
+    @calname = @calendar.name+'_'+@calendar.id.to_s
     respond_to do |format|
       format.pdf do
-          @example_text = "some text"
           render :pdf => "file_name",
                  :template => 'calendars/show.pdf.erb',
-                 :layout => 'pdf',
-                 :page_size  => 'A3'
+                 :page_size  => 'A3',
                  #:show_as_html => true,
-                 #:save_to_file  => Rails.root.join('pdfs', "#{@calendar.name}.pdf"),
+                 :save_to_file  => Rails.root.join('public/pdfs', "#{@calname}.pdf"),
+                 :margin => {:top                => 5,                     # default 10 (mm)
+                           :bottom             => 5,
+                           :left               => 5,
+                           :right              => 5},
+                 :no_background => false,
+                 :lowquality                     => false         
       end
     end    
   end

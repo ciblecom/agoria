@@ -5,9 +5,10 @@
 <%= javascript_include_tag "fullcalendar.min" %>
 <%end%>
 <%= wicked_pdf_stylesheet_link_tag "documents" %>
-
+<html>
+	<body>
 <div class="document">
-    <%= wicked_pdf_image_tag("1.jpg", :width => "100%") %>
+    <%= image_tag("http://agoria.herokuapp.com/assets/1.jpg", :width => "100%") %>
     <!--http://static3.7sur7.be/static/photo/2012/16/1/6/20120108165813/media_xll_4554981.jpg-->
     <div id="banner"> 
     	<table width="100%;">
@@ -17,6 +18,7 @@
     		</tr>
     	</table>	
     </div>
+    
     <table id="calendar" cellspacing="10">
 	<tr>
 	   <th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th> <th>Vendredi</th><th>Samedi</th><th>Dimanche</th>
@@ -42,5 +44,7 @@
 		<% end %>
 	</tr>
 </table>
-<%= wicked_pdf_image_tag("footer1.jpg", :width => "100%") %>
+<%= image_tag("http://agoria.herokuapp.com/assets/footer1.jpg", :width => "100%") %>
 </div>
+</body>
+</html>
