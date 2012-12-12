@@ -25,8 +25,13 @@
 	</div>
 
   <div class="contenerCal three">
-  	<%= f.label :logo, "Insérer mon logo" %> <span>(110x100 pixels)</span><br />
-  	<%= f.file_field :logo %>
+  	<%= f.label :logo, "Insérer mon logo" %><br />
+  	<%= f.file_field :logo %> 
+  	<%if  @calendar.logo.medium %>
+  	<div>
+  		<%= image_tag(@calendar.logo.medium.to_s) %>
+  	</div>
+  	<%end%>
   </div>
 
   <div class="contenerCal four">
@@ -35,7 +40,7 @@
     	@calendar.description = "<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>"
     	end	
     %>
-    <%= f.text_area :description, :class => "wysihtml5" %>
+    <%= f.text_area :description,:rows => 10, :class => "wysihtml5" %>
   </div>
 
   <div class="contenerCal five">	
@@ -44,7 +49,7 @@
 	  <%= render 'event_fields', :f => builder %>
 	<% end %>
 	
-    <p><%= link_to_add_fields "Ajouter un évènement", f, :events %></p>
+    <p class="adding"><%= link_to_add_fields "Ajouter un évènement", f, :events %></p>
   </div>  
   <%= f.hidden_field :user_id %>
   <div><%= f.submit "Enregistrer", :class => "button_submit" %></div>

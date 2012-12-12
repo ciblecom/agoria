@@ -15,7 +15,38 @@
  */
  
 
+a {
+   outline: 0 !important;
+}
 
+li.dropdown{
+	display:none !important;
+}
+
+.three img{
+	border:5px #c1c1c1 solid;
+	width:100px;
+}
+
+p.adding a{
+	display:block;
+	background:#fff url(plus.jpg) top left repeat-y;
+	padding-left:30px;
+	line-height:21px;
+	color:#d34a00 !important;
+	font-weight:bold;
+}
+
+label.remevent{
+	display:inline-block !important;
+	background:#fff url(minus.jpg) top left repeat-y !important;
+	padding-left:25px !important;
+	line-height:21px !important;
+	color:#72098c !important;
+	font-weight:bold !important;
+	height:21px !important;
+	width:80px !important;
+}
 
 body{
 background:#fff url(bgAll.jpg) top center repeat-y;

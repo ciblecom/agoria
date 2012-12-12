@@ -13,7 +13,7 @@
     <div id="banner"> 
     	<table width="100%;">
     		<tr>
-    			<td width='20%'><%= image_tag(@calendar.logo.medium.to_s) %></td>
+    			<td width='220'><%= image_tag(@calendar.logo.medium.to_s) %></td>
     			<td align="right" valign="top" class="description"><%=@calendar.description.html_safe%></td>
     		</tr>
     	</table>	
@@ -42,7 +42,7 @@
 		<%end%>
 		> <%= d.day %>
 			<% @calendar.events.each do |e| %>
-			<% @myday = e.datee.strftime('%d') %>
+			<% @myday = e.datee.strftime('%e').gsub(/\s+/, "") %>
 				<% if @myday == d.day.to_s %>
 				 	<div><%= e.name %></div>
 				<%end%>
