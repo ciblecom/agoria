@@ -6,14 +6,15 @@
 <%end%>
 <%= wicked_pdf_stylesheet_link_tag "documents" %>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,300,900' rel='stylesheet' type='text/css'>
 <div class="document">
     <%= image_tag("http://agoria.herokuapp.com/assets/1.jpg", :width => "100%") %>
     <!--http://static3.7sur7.be/static/photo/2012/16/1/6/20120108165813/media_xll_4554981.jpg-->
     <div id="banner"> 
     	<table width="100%;">
     		<tr>
-    			<td width='25%'><%= image_tag(@calendar.logo.medium.to_s) %></td>
-    			<td align="right" valign="top" style="color:#fff;font-size:18px !important;"><%=@calendar.description.html_safe%></td>
+    			<td width='20%'><%= image_tag(@calendar.logo.medium.to_s) %></td>
+    			<td align="right" valign="top" class="description"><%=@calendar.description.html_safe%></td>
     		</tr>
     	</table>	
     </div>
@@ -29,12 +30,17 @@
 		<% @end_of_month = Date.civil(2013, 1, -1) %>
 		<% (@beginning_of_month..@end_of_month).each do |d| %>
 		<% if d == @beginning_of_month %>
-			<% d.wday.times do %> 
+		<% @wdays = d.wday-1 %>
+			<% @wdays.times do %> 
 				<td class="offset"></td> 
 			<% end %>
 		<% end %>
-		<% if d.wday == 0 %> </tr><tr> <% end %>
-		<td> <%= d.day %>
+		<% if d.wday == 1 %> </tr><tr> <% end %>
+		<td 
+		<% if d.strftime('%a') == 'Sun' || d.strftime('%a') == 'Sat' %>
+		class="off"
+		<%end%>
+		> <%= d.day %>
 			<% @calendar.events.each do |e| %>
 			<% @myday = e.datee.strftime('%d') %>
 				<% if @myday == d.day.to_s %>
