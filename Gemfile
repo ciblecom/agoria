@@ -15,6 +15,7 @@ gem "compass-rails"
 gem 'bootstrap-wysihtml5-rails'
 gem 'wicked_pdf'
 
+
 group :production do
   gem 'pg', '0.12.2'
   gem 'thin'
