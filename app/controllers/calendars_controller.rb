@@ -1,4 +1,4 @@
-# encoding: UTF-8
+# encoding: utf-8
 class CalendarsController < ApplicationController
   
   before_filter :authenticate_user!
@@ -18,7 +18,6 @@ class CalendarsController < ApplicationController
                  :page_size  => 'A3'
                  #:show_as_html => true,
                  #:save_to_file  => Rails.root.join('pdfs', "#{@calendar.name}.pdf"),
-                 
       end
     end    
   end

@@ -16,11 +16,12 @@
 
 #calendar{margin:20px 25px;}
 
-#calendar th{ width:200px; color:#fff; text-align:left; font-weight:normal; text-transform:uppercase; }
+#calendar th{ width:155px; color:#fff; text-align:left; font-weight:normal; text-transform:uppercase; }
 
-#calendar td{ width:200px; height:100px; background:#fff; text-align:left; margin:5px; vertical-align:top; padding:10px; color:#cd592e;}
+#calendar td{ width:155px; height:100px; background:#fff; text-align:left; margin:5px; vertical-align:top; padding:10px; color:#cd592e;}
 
-#calendar div{ color:#949494; text-align:center; font-weight:bold;}
+#calendar div{ color:#949494; text-align:center; font-weight:bold; 
+}
 
 #calendar td.offset{
   background:none;

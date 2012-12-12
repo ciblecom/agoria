@@ -1,10 +1,13 @@
-<% content_for :js do %>
+
+<%
+# encoding: utf-8
+ content_for :js do %>
 <%= javascript_include_tag "fullcalendar.min" %>
 <%end%>
 <%= wicked_pdf_stylesheet_link_tag "documents" %>
 
 <div class="document">
-    <%= image_tag("", :width => "100%") %>
+    <%= wicked_pdf_image_tag("1.jpg", :width => "100%") %>
     <!--http://static3.7sur7.be/static/photo/2012/16/1/6/20120108165813/media_xll_4554981.jpg-->
     <div id="banner"> 
     	<table width="100%;">
@@ -39,5 +42,5 @@
 		<% end %>
 	</tr>
 </table>
-<%= image_tag("footer1.jpg", :width => "100%") %>
+<%= wicked_pdf_image_tag("footer1.jpg", :width => "100%") %>
 </div>
