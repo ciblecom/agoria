@@ -1,6 +1,27 @@
+<% content_for :js do %>
+<%= javascript_include_tag "fullcalendar.min" %>
+<%end%>
 <%= wicked_pdf_stylesheet_link_tag "documents" %>
 
 <div class="document">
-  qdf qsd fqs df qsd f
-  
+    <%=@calendar.name%>
+    <%= image_tag("http://static3.7sur7.be/static/photo/2012/16/1/6/20120108165813/media_xll_4554981.jpg") %>
+    <table id="calendar">
+	<tr>
+	   <th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th> <th>Vendredi</th><th>Samedi</th><th>Dimanche</th>
+	</tr>
+	<tr>
+		<% @beginning_of_month = Date.civil(2012, 12, 1) %>
+		<% @end_of_month = Date.civil(2012, 12, -1) %>
+		<% (@beginning_of_month..@end_of_month).each do |d| %>
+		<% if d == @beginning_of_month %>
+			<% d.wday.times do %> 
+				<td class=‘offset’></td> 
+			<% end %>
+		<% end %>
+		<% if d.wday == 1 %> </tr><tr> <% end %>
+		<td> <%= d.day %> </td>
+		<% end %>
+	</tr>
+</table>
 </div>

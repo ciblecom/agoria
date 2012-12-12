@@ -5,7 +5,7 @@
   <% for calendar in @calendars %>
     <tr>
       <td><%= calendar.name %></td>
-      <td><%= link_to "Edit", edit_calendar_path(calendar) %></td>
+      <td><%= link_to "Edit", edit_calendar_path(calendar) %> - <p id="pdf_link"><%= link_to "exporter", calendar_path(calendar, :format => "pdf") %></p></td>
     </tr>
   <% end %>
 </table>
