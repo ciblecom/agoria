@@ -14,7 +14,7 @@ class CalendarsController < ApplicationController
       format.pdf do
           render :pdf => @calname,
                  :disposition => 'attachment',
-                 :page_size => 'A3',
+                 :page_size => 'Letter',
                  :page_height => '16.5in', 
                  :page_width => '11.7in',
                  :template => 'calendars/show.pdf.erb',
