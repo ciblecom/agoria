@@ -33,7 +33,7 @@
 	<div class="left "><%= f.label :email %>
 	<%= f.email_field :email %></div>
 
-	 <div  class="left rightInput checkbox"><%= f.label :optin ,'J’accepte les conditions générales d’utilisation'%>
+	 <div  class="left rightInput checkbox"><label for="optin">J’accepte les <%= link_to "conditions générales d’utilisation", "cgu.pdf", :target => "_blank", :class => "purple" %></label>
 	 <%= f.check_box :optin %></div>
   </div>
   
