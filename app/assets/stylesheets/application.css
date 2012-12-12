@@ -14,6 +14,31 @@
 *= require bootstrap-wysihtml5
  */
  
+#archive, #archive li{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+	text-align: center;
+} 
+
+#archive li{
+	display:inline-block;
+	margin:0px 15px;
+} 
+
+.actions{margin-top:10px;}
+
+.actions a{
+	color:#d34a00 !important;
+	font-weight:bold;
+}
+ 
+ 
+ .notob{
+ 	position:absolute;
+ 	margin-top:0px;
+ 	margin-left:430px;
+ }
 
 a {
    outline: 0 !important;
@@ -25,7 +50,8 @@ li.dropdown{
 
 .three img{
 	border:5px #c1c1c1 solid;
-	width:100px;
+	width:200px;
+	margin-bottom: 10px;
 }
 
 p.adding a{

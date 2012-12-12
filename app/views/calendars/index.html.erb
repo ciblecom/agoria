@@ -1,13 +1,11 @@
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
+<ul id="archive">
   <% for calendar in @calendars %>
-    <tr>
-      <td><%= calendar.name %></td>
-      <td><%= link_to "Edit", edit_calendar_path(calendar) %> - <p id="pdf_link"><%= link_to "exporter", calendar_path(calendar, :format => "pdf") %></p></td>
-    </tr>
+    <li>
+<b><%= calendar.name %></b><br>      
+<%= image_tag('visu1_small.jpg') %>
+<p class="actions"><%= link_to "Modifier", edit_calendar_path(calendar) %> - <%= link_to "Exporter", calendar_path(calendar, :format => "pdf") %><hr>
+    </li>
   <% end %>
-</table>
 
-<p><%= link_to "New Calendar", new_calendar_path %></p>
+</ul>
+<p align="center"><%= link_to "Nouveau calendrier", new_calendar_path, :class => "purple button_submit" %></p>

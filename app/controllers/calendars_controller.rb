@@ -4,7 +4,7 @@ class CalendarsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @calendars = Calendar.all
+    @calendars = Calendar.order('created_at DESC').all
   end
   
   def show

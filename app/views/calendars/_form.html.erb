@@ -16,26 +16,30 @@
   	<%= f.label :name, "Thème" %><br />
   	<div class="twoone">
   		<h3 >Télécharger le calendrier et le thème du mois</h3>
-  		<%= image_tag('visu1_small.jpg') %>
+  		<%= link_to(image_tag('visu1_small.jpg'), root_path) %>
   	</div>
   	<div class="twotwo">
   		<h3 >télécharger uniquement le visuel</h3>
+  		<%= link_to(image_tag('visu1_xsmall.jpg'), root_path) %>
   	</div>
   	
 	</div>
 
   <div class="contenerCal three">
+  	<div class="notob">[Pas obligatoire]</div>
   	<%= f.label :logo, "Insérer mon logo" %><br />
-  	<%= f.file_field :logo %> 
-  	<%if !@calendar.logo.medium == 'medium_default.png' %>
+  	<%if @calendar.logo.medium != 'medium_default.png' %>
   	<div>
   		<%= image_tag(@calendar.logo.medium.to_s) %>
   	</div>
   	<%end%>
+  	<%= f.file_field :logo %> 
+  	
   </div>
 
   <div class="contenerCal four">
-    <%= f.label :description, 'Editer le contenu texte proposé' %><br />
+  	<div class="notob">[Pas obligatoire]</div>
+    <%= f.label :description, 'Editer le contenu proposé' %><br />
      <% if @calendar.description.nil?
     	@calendar.description = "<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. <br>Et sans travail, pas d'emploi. Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.<br>Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>"
     	end	
