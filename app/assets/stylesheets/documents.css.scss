@@ -24,8 +24,8 @@ text-transform:uppercase;
 #calendar{margin:20px 25px; background:#cd592e;}
 
 #calendar th{ 
-  width:111px !important; 
-  font: normal 11px/1em 'Lato', sans-serif !important; 
+  width:121px !important; 
+  font: normal 12px/1em 'Lato', sans-serif !important; 
   color:#fff  !important; 
   text-align:left  !important; 
   font-weight:normal  !important; 
@@ -33,15 +33,15 @@ text-transform:uppercase;
   }
 
 #calendar td{ 
-  width:111px  !important; 
+  width:121px  !important; 
   height:75px  !important; 
   background:#fff  !important; 
   text-align:left  !important; 
   margin:5px  !important; 
   vertical-align:top  !important;  
-  padding:10px  !important; 
+  padding:7px 10px  !important; 
   color:#cd592e  !important;
-  font: normal 11px/1em 'Lato' !important
+  font: normal 12px/1em 'Lato' !important
   }
 #calendar td.off{ background:#c7c8ca  !important; color:#6d6e71  !important;}
 
