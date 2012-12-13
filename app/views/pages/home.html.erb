@@ -10,7 +10,7 @@
 <% end %>
 
 <% if !user_signed_in? %>
-	<p align="center"><a href="/users/sign_up" class="purple">S'inscrire</a> - <a href="/users/sign_in" class="purple">Se connecter?</a></p>
+	<p align="center"><a href="/users/sign_up" class="purple button_submit">S'inscrire</a><a href="/users/sign_in" class="purple button_submit">Se connecter?</a></p>
 <% else %>
 	<% if !is_user_active? %>
 		<div id="error_explanation" class="alert-info"> Merci de votre intérêt à participer à la campagne « tousensemblepourmonemploi ». L’accès et l’utilisation du calendrier et des visuels sont subordonnés à l’autorisation de la direction de votre entreprise ou de votre organisation. Nous traitons dès lors votre demande selon ces conditions et vous confirmons prochainement votre accès.</div>
@@ -18,7 +18,7 @@
 		<p align="center"><a href="/calendars/new" class="purple button_submit">Créer mon calendrier</a></p>
 	<% end %>
 
-<p align="center"> Télécharger uniquement le visuel<br>
-	<%= link_to(image_tag('visu1_xsmall.jpg'), "/janvier_visu.pdf", :target => "_blank") %></p>
+<p align="center"> Télécharger uniquement l'affiche</p>
+<p align="center"> <%= link_to(image_tag('visu1_xsmall.jpg'), "/janvier_visu.pdf", :target => "_blank") %></p>
 <br><br>
 <% end %>	
