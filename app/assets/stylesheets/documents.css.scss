@@ -1,9 +1,6 @@
-@page { size: 11.7in 16.5in ; }
-
 .document {
  color:#fff;
  background:#cd592e !important;
- size: 11.7in 16.5in ;
 }
 
 
@@ -13,25 +10,24 @@
 }
 
 .description{
- font: normal 18px/1.4em 'Lato', sans-serif !important; 
+ font: normal 12px/1.4em 'Lato', sans-serif !important; 
  color:#fff;
 }
 
 h1{margin:15px 25px 15px;padding:0px;
-font: bold 72px/1em 'Lato', sans-serif;
+font: bold 48px/1em 'Lato', sans-serif;
 text-transform:uppercase;
 
 }
 
 #calendar{margin:20px 25px; background:#cd592e;}
 
-#calendar th{ width:161px; font: normal 16px/1em 'Lato', sans-serif; color:#fff; text-align:left; font-weight:normal; text-transform:uppercase; }
+#calendar th{ width:101px; font: normal 11px/1em 'Lato', sans-serif; color:#fff; text-align:left; font-weight:normal; text-transform:uppercase; }
 
-#calendar td{ width:161px; height:100px; background:#fff; text-align:left; margin:5px; vertical-align:top; padding:10px; color:#cd592e;}
+#calendar td{ width:101px; height:80px; background:#fff; text-align:left; margin:5px; vertical-align:top; padding:10px; color:#cd592e;font: normal 11px/1em 'Lato'}
 #calendar td.off{ background:#c7c8ca; color:#6d6e71;}
 
-#calendar div{ color:#6d6e71; text-align:center; font-weight:bold; max-width:145px;margin-bottom:5px;
-}
+#calendar div{ color:#6d6e71; text-align:center; font-weight:bold; max-width:111px;margin-bottom:5px;}
 
 #calendar td.offset{
   background:none;

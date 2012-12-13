@@ -11,7 +11,7 @@
     <div id="banner"> 
     	<table width="100%;">
     		<tr>
-    			<td width='220'><%= image_tag(@calendar.logo.medium.to_s) %></td>
+    			<td width='220'><%= image_tag(@calendar.logo.medium.to_s, :width => "160") %></td>
     			<td align="right" valign="top" class="description"><%=@calendar.description.html_safe%></td>
     		</tr>
     	</table>	
