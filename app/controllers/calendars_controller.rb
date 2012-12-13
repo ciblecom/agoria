@@ -13,10 +13,11 @@ class CalendarsController < ApplicationController
     respond_to do |format|
       format.pdf do
           render :pdf => @calname,
-                 :disposition => 'attachment',
-                 :page_size => 'Letter',
+                 #:disposition => 'attachment',
+                 #:page_size => 'Letter',
                  :page_height => '16.5in', 
                  :page_width => '11.7in',
+                 :dpi => 300,
                  :template => 'calendars/show.pdf.erb',
                  :save_to_file  => Rails.root.join('public/pdfs', "#{@calname}.pdf"),
                  :margin => {:top   => 5,
