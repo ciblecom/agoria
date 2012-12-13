@@ -18,10 +18,10 @@ class CalendarsController < ApplicationController
                   :dpi => 300,
                   :template => 'calendars/show.pdf.erb',
                   :save_to_file  => Rails.root.join('public/pdfs', "#{@calname}.pdf"),
-                  :margin => {:top   => 5,
-                             :bottom  => 5,
-                             :left    => 5,
-                             :right   => 5},
+                  :margin => {:top   => 2,
+                             :bottom  => 2,
+                             :left    => 2,
+                             :right   => 2},
                   :no_background => false,
                   :lowquality  => true
       end
