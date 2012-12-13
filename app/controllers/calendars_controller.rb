@@ -12,7 +12,7 @@ class CalendarsController < ApplicationController
     @calname = @calendar.name+'_'+@calendar.id.to_s
     respond_to do |format|
       format.pdf do
-          render :page_size => "A3",:pdf => @calname,:template => 'calendars/show.pdf.erb'
+          render :page_size => "a3",:pdf => @calname,:template => 'calendars/show.pdf.erb'
       end
     end    
   end
