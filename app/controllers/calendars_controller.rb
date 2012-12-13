@@ -4,7 +4,7 @@ class CalendarsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @calendars = Calendar.order('created_at DESC').all
+    @calendars = current_user.calendars.order('created_at DESC').all
   end
   
   def show
@@ -12,20 +12,21 @@ class CalendarsController < ApplicationController
     @calname = @calendar.name+'_'+@calendar.id.to_s
     respond_to do |format|
       format.pdf do
-          render :pdf => @calname,
-                 #:disposition => 'attachment',
-                 #:page_size => 'Letter',
-                 :page_height => '16.5in', 
-                 :page_width => '11.7in',
-                 :dpi => 300,
-                 :template => 'calendars/show.pdf.erb',
-                 :save_to_file  => Rails.root.join('public/pdfs', "#{@calname}.pdf"),
-                 :margin => {:top   => 5,
-                           :bottom  => 5,
-                           :left    => 5,
-                           :right   => 5},
-                 :no_background => false,
-                 :lowquality  => true         
+          render 
+            :page_size => 'Letter',
+            :pdf => @calname,
+             #:disposition => 'attachment',
+             :page_height => '16.5in', 
+             :page_width => '11.7in',
+             :dpi => 300,
+             :template => 'calendars/show.pdf.erb',
+             :save_to_file  => Rails.root.join('public/pdfs', "#{@calname}.pdf"),
+             :margin => {:top   => 5,
+                       :bottom  => 5,
+                       :left    => 5,
+                       :right   => 5},
+             :no_background => false,
+             :lowquality  => true         
       end
     end    
   end
