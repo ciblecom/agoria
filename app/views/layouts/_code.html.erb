@@ -1,7 +1,24 @@
+
 <script type="text/javascript">
-  
-  
-
-
-
+new TINY.editor.edit('editor',{
+	id:'calendar_description',
+	width:525,
+	height:175,
+	cssclass:'te',
+	controlclass:'tecontrol',
+	rowclass:'teheader',
+	dividerclass:'tedivider',
+	controls:['bold','italic','underline','strikethrough','|',
+			  'orderedlist','unorderedlist','|','outdent','indent','|','leftalign',
+			  'centeralign','rightalign','blockjustify','|','undo','redo'],
+	footer:false,
+	fonts:['Verdana','Arial','Georgia','Trebuchet MS'],
+	xhtml:true,
+	cssfile:'style.css',
+	bodyid:'editor',
+	footerclass:'tefooter',
+	toggle:{text:'source',activetext:'wysiwyg',cssclass:'toggle'},
+	resize:{cssclass:'resize'}
+});
 </script>
+

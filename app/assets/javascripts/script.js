@@ -12,9 +12,10 @@ function displayAlert() {
 	}
 }
 	
+
+	
  	 	
 $(document).ready(function () {
- 	
  	
  	/*******************************************************************/
 	/* NOTICE MESSAGE

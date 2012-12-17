@@ -14,6 +14,27 @@
 *= require bootstrap-wysihtml5
  */
  
+.te {border:1px solid #bbb; padding:0 1px 1px; font: normal 12px/20px sans-serif !important; }
+.te iframe {border:none}
+.teheader {height:31px; border-bottom:1px solid #bbb; background:url(header-bg.gif) repeat-x; padding-top:1px}
+.teheader select {float:left; margin-top:5px}
+.tefont {margin-left:12px}
+.tesize {margin:0 3px}
+.testyle {margin-right:12px}
+.tedivider {float:left; width:1px; height:30px; background:#ccc}
+.tecontrol {float:left; width:34px; height:30px; cursor:pointer; background-image:url(icons.png)}
+.tecontrol:hover {background-color:#fff; background-position:30px 0}
+.tefooter {height:32px; border-top:1px solid #bbb; background:#f5f5f5}
+.toggle {float:left; background:url(icons.png) -34px 2px no-repeat; padding:9px 13px 0 31px; height:23px; border-right:1px solid #ccc; cursor:pointer; color:#666}
+.toggle:hover {background-color:#fff}
+.resize {float:right; height:32px; width:32px; background:url(resize.gif) 15px 15px no-repeat; cursor:s-resize}
+#editor {font-family: Arial, Helvetica, sans-serif !important;}
+ 
+ 
+#archive{
+	
+} 
+ 
 #archive, #archive li{
 	margin:0px;
 	padding:0px;
@@ -23,7 +44,14 @@
 
 #archive li{
 	display:inline-block;
+	width:230px;
 	margin:0px 15px;
+} 
+
+.lt-ie8 #archive li{
+	zoom:1;
+	display:inline;
+
 } 
 
 .actions{margin-top:10px;}
@@ -75,6 +103,10 @@ label.remevent{
 }
 
 body{
+background:#fff url(bgAll.jpg) top center repeat-y;
+}
+
+.lt-ie8 body{
 background:#fff url(bgAll.jpg) top center repeat-y;
 }
 
@@ -140,9 +172,14 @@ background:#fff url(bgAll.jpg) top center repeat-y;
 
 
 .twoone, .twotwo{
-	display:inline-block;
-	width:250px;
-	vertical-align:top;
+   display: inline-block;
+   width:250px;
+   vertical-align:top;
+}
+
+.lt-ie8 .twoone,.lt-ie8  .twotwo{
+	zoom:1;
+   display: inline;
 }
 
 .twotwo{margin-left:15px;}
@@ -176,6 +213,13 @@ background:#fff url(bgAll.jpg) top center repeat-y;
 	width:100px !important;
 }
 
+.lt-ie8 .remevent{
+	zoom:1 !important;
+	display:inline !important;
+    width:50px !important;
+}
+
+
 .reminput{
 	margin:0px 0 0 10px !important;
 }
@@ -197,28 +241,31 @@ background:#fff url(bgAll.jpg) top center repeat-y;
 /***************************************************************/
     
     #topLinks{
-      height:35px;
-      font: 700 13px/12px 'Lato', sans-serif; 
+      
+      font: 700 13px/28px 'Lato', sans-serif; 
     }
     
      header #topLinks ul, header #topLinks ul > li{
         margin:0px;
         padding:0px;
         list-style:none;
-        display:inline-block;
-        position:relative;
       }
-         header #topLinks #connectionLinks{float:right;}
+         header #topLinks #toolsLinks{
+         float:left;
+         }
+         
+         header #topLinks #connectionLinks{
+         float:right;
+         margin-top:4px;
+         }
       
-      #topLinks #toolsLinks li div.child,
-      #topLinks #connectionLinks li div.child{
-        display:none;
-      }
-      
+     /* #toolsLinks li ,#toolsLinks li a{
+      	display:inline;
+     }*/
 
       #topLinks #connectionLinks > li{
         vertical-align:top;
-        
+        display:inline;
       }
       
        #topLinks ul.topLinker li > a{
@@ -226,28 +273,39 @@ background:#fff url(bgAll.jpg) top center repeat-y;
        		color:#949494;
        	}
        
-
+		 #topLinks ul.topLinker{
+		 	display:inline;
+		 	
+		 }
        
        #topLinks ul.topLinker li.home  a{
-       	text-indent:9999px; 
-       /* display:block;*/
         width:25px;
        	height:23px;
-       	background:transparent url(home.png) top left no-repeat;
        	}
         
-       #topLinks ul.topLinker > li {border-left:1px #dbdbdb solid; padding:3px 10px 0 13px;}
-          #topLinks ul.topLinker > li:first-child {border-left:none; padding-left:0px;}
-          #topLinks ul.topLinker > li:last-child {padding-right:0px;}
+       #topLinks ul.topLinker > li {border-left:1px #dbdbdb solid; padding:3px 10px 0 13px;display:inline !important; }
+       #topLinks ul.topLinker > li:first-child {border-left:none; padding-left:0px;}
+      #topLinks ul.topLinker > li:last-child {padding-right:0px;}
 
 
 header h1{
-	margin-top:35px;
+	margin-top:35px !important;
 	text-transform:uppercase;
 	border-bottom:1px #8604a6 dashed; 
-	width:inherit;
-	display:inline-block;
+	float:none;
+	clear:both;
+	/*width:300px;*/
+	padding:0px;
+	display:table;
 	font: bold 26px/1em 'Lato', sans-serif;
+	
+}
+
+.lt-ie8 header h1{
+
+	width:410px;
+
+	
 }
 
 

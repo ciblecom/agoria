@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
   #has_many :badges, :dependent => :destroy
   
   #after_create :create_badges
@@ -20,6 +19,13 @@ class User < ActiveRecord::Base
   validates :optin, :presence => {:message => "Vous devez accepter les conditions générales"}
   
   has_many :calendars, :dependent => :destroy
+  
+  after_create :send_welcome_mail
+  
+  def send_welcome_mail
+     UserMailer.welcome_email(self).deliver
+  end
+  
   
   def update_with_password(params={})
     if params[:password].blank?
@@ -60,5 +66,9 @@ class User < ActiveRecord::Base
     clean_up_passwords
     result
   end
+  
+  private
+
+
   
 end

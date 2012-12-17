@@ -10,12 +10,14 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require ckeditor
 //= require jquery
 //= require jquery_ujs
 //= bootstrap
 //= require jquery.ui.datepicker
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales/fr-FR
+
 
 function remove_fields(link) {
   $(link).prev("input[type=hidden]").val("1");
@@ -38,8 +40,6 @@ $(document).ready(function() {
 	$( ".datepicker" ).datepicker( $.datepicker.regional[ "fr" ] );
 });
 
-$('.wysihtml5').each(function(i, elem) {
-    $(elem).wysihtml5();
-  });
+
 
 });    

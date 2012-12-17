@@ -9,7 +9,12 @@
   
   <div class="contenerCal one">
     <%= f.label :name, "Titre" %><br />
-    <%= f.text_field :name, :value => current_user.company.downcase.tr(" ", "_")+"_"+Date.today.to_s, :class => 'input-xlarge' %>
+    <% if @calendar.name.nil?
+    	@calendar.name = current_user.company.downcase.tr(" ", "_")+"_"+Date.today.to_s
+    	end	
+    %>
+    
+    <%= f.text_field :name,  :class => 'input-xlarge' %>
   </div>
 	
 	<div class="contenerCal two">
@@ -44,7 +49,7 @@
     	@calendar.description = "<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. <br>Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.<br>Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>"
     	end	
     %>
-    <%= f.text_area :description,:rows => 10, :class => "wysihtml5" %>
+    <%= f.text_area :description,:rows => 10, :class => 'ckeditor' %>
     <p>L’entreprise accepte l’entière responsabilité du texte éditer ci-dessus.</p>
   </div>
 
