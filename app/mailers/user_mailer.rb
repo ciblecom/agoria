@@ -5,4 +5,8 @@ class UserMailer < ActionMailer::Base
     mail(:to => "nicolas.delrez@cible.be", :subject => "Nouvelle inscription sur ensemblepourmonemploi.be")
   end
   
+  def active_email(user)
+    mail(:to => user.email, :subject => "Votre inscription sur ensemblepourmonemploi.be")
+  end
+  
 end

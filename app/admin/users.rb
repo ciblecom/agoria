@@ -9,6 +9,7 @@ ActiveAdmin.register User do
       user.active = true    
     end   
     user.save
+    UserMailer.active_email(user).deliver
     session[:return_to] ||= request.referer
     redirect_to(session[:return_to], :notice => "User correctement mis à jour!")
   end 
@@ -24,10 +25,10 @@ ActiveAdmin.register User do
     
     column 'Actif?', :sortable => :active do |user|
       span do
-        if user.active == 0
-          link_to('<i class="icon-white icon-thumbs-down"></i>'.html_safe, popularize_admin_user_path(user.id), :class => "btn btn-danger", :title => "Activer")
+        if user.active == false
+          link_to('Valider', popularize_admin_user_path(user.id), :title => "Valider")
         else
-          link_to('<i class="icon-white icon-thumbs-up"></i>'.html_safe, popularize_admin_user_path(user.id), :class => "btn btn-success", :title => "Désactver")
+          link_to('Désactver', popularize_admin_user_path(user.id), :title => "Désactver")
         end  
       end  
     end
