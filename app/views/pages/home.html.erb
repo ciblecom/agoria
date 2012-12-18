@@ -12,10 +12,12 @@
 <% if !user_signed_in? %>
 	<p align="center"><a href="/users/sign_up" class="purple button_submit">S'inscrire</a><a href="/users/sign_in" class="purple button_submit">Se connecter?</a></p>
 <% else %>
-	<% if !is_user_active? %>
+	<% if is_user_active == 0 %>
 		<div id="error_explanation" class="alert-info"> Merci de votre intérêt à participer à la campagne « ensemblepourmonemploi.be ». L’accès et l’utilisation du calendrier et des visuels sont subordonnés à l’autorisation de la direction de votre entreprise ou de votre organisation. Nous traitons dès lors votre demande selon ces conditions et vous confirmons prochainement votre accès.</div>
-	<% else %>
+	<% elsif is_user_active == 1  %>
 		<p align="center"><a href="/calendars/new" class="purple button_submit">Créer mon calendrier</a></p>
+	<% else %>	
+		<div id="error_explanation" class="alert-error">Nous sommes désolés mais votre demande d’inscription a été refusée.</div>
 	<% end %>
 
 <p align="center"> Télécharger uniquement l'affiche</p>

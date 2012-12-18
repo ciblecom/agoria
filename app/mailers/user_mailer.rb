@@ -9,4 +9,8 @@ class UserMailer < ActionMailer::Base
     mail(:to => user.email, :subject => "Votre inscription sur ensemblepourmonemploi.be")
   end
   
+  def refuse_email(user)
+    mail(:to => user.email, :subject => "Votre inscription sur ensemblepourmonemploi.be")
+  end
+  
 end

@@ -1,7 +1,7 @@
 <div id="topLinks" class="clearfix">
 	<ul id="toolsLinks" class="topLinker">
 		<li class="home"><%= link_to image_tag("home.png"),root_path %></li>
-		<% if user_signed_in? %>
+		<% if user_signed_in? &&  is_user_active == 1 %>
 			<li><%= link_to "Archives", calendars_path %></li>
 			<li><%= link_to "CGU", "cgu.pdf", :target => "_blank" %></li>
 		<% end %>	

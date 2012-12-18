@@ -1,17 +1,22 @@
 # encoding: UTF-8
 ActiveAdmin.register User do
   
-   member_action :popularize do
+   member_action :active do
     user = User.find(params[:id])
-    if user.active == true
-      user.active = false
-    else
-      user.active = true    
-    end   
+    user.active = 1
+    UserMailer.active_email(user).deliver    
     user.save
-    UserMailer.active_email(user).deliver
     session[:return_to] ||= request.referer
-    redirect_to(session[:return_to], :notice => "User correctement mis à jour!")
+    redirect_to(session[:return_to], :notice => "User correctement validé!")
+  end 
+  
+  member_action :refuse do
+    user = User.find(params[:id])
+    user.active = 2
+    UserMailer.refuse_email(user).deliver    
+    user.save
+    session[:return_to] ||= request.referer
+    redirect_to(session[:return_to], :notice => "User correctement refusé!")
   end 
   
    index do
@@ -25,10 +30,14 @@ ActiveAdmin.register User do
     
     column 'Actif?', :sortable => :active do |user|
       span do
-        if user.active == false
-          link_to('Valider', popularize_admin_user_path(user.id), :title => "Valider")
+        if user.active == 0
+           span link_to('Valider', active_admin_user_path(user.id), :title => "Valider") 
+           span " - "
+           span link_to('Refuser', refuse_admin_user_path(user.id), :title => "Refuser")
+        elsif user.active == 1
+          'Accepté'
         else
-          link_to('Désactver', popularize_admin_user_path(user.id), :title => "Désactver")
+          'Refusé'    
         end  
       end  
     end
