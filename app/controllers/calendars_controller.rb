@@ -33,7 +33,11 @@ class CalendarsController < ApplicationController
   end
 
   def create
+    
     @calendar = current_user.calendars.new(params[:calendar])
+    if @calendar.logo.to_s == "logono.gif"
+       @calendar.description = "<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. <br>Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.<br>Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>"
+    end
     if @calendar.save
       redirect_to calendars_url, :notice => "Calendrier correctement créé."
     else
@@ -43,6 +47,9 @@ class CalendarsController < ApplicationController
 
   def edit
     @calendar = Calendar.find(params[:id])
+    if @calendar.logo.to_s == "logono.gif"
+       @calendar.description = "<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. <br>Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.<br>Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>"
+    end
     @events = @calendar.events
   end
 

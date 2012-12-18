@@ -3,6 +3,7 @@
 		<li class="home"><%= link_to image_tag("home.png"),root_path %></li>
 		<% if user_signed_in? %>
 			<li><%= link_to "Archives", calendars_path %></li>
+			<li><%= link_to "CGU", "cgu.pdf", :target => "_blank" %></li>
 		<% end %>	
 	</ul>
 	
