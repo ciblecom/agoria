@@ -23,7 +23,7 @@ class CalendarsController < ApplicationController
       format.pdf do
           render :page_size => "A4",
                   :pdf => @calname,
-                 # :disposition => 'attachment',
+                  :disposition => 'attachment',
                   :template => @source,
                   :orientation => @orientation,
                   :save_to_file  => Rails.root.join('public/pdfs', "#{@calname}.pdf"),
