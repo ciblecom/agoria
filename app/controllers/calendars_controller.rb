@@ -21,7 +21,7 @@ class CalendarsController < ApplicationController
     @calname = @calendar.name+'_'+@calendar.id.to_s
     respond_to do |format|
       format.pdf do
-          render :page_size => "A4",
+          render :page_size => "A3",
                   :pdf => @calname,
                   :disposition => 'attachment',
                   :template => @source,
