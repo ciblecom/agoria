@@ -3,9 +3,12 @@
     <li>
 <b><%= calendar.name %></b><br>      
 <%= image_tag('visu1_small.jpg') %>
-<p class="actions"><%= link_to "Modifier", edit_calendar_path(calendar) %> - <%= link_to "Exporter", calendar_path(calendar, :format => "pdf"), :target => "_blank" %><hr>
+<p class="actions">
+<%= link_to "Exporter Calendrier", calendar_path(calendar, :format => "pdf", :what => 'calendar'), :target => "_blank" %> - 
+<%= link_to "Exporter Affiche", calendar_path(calendar, :format => "pdf", :what => 'poster'), :target => "_blank" %><br>
+<%= link_to "Modifier", edit_calendar_path(calendar) %>
+<hr>
     </li>
   <% end %>
-
 </ul>
 <p align="center"><%= link_to "Nouveau calendrier", new_calendar_path, :class => "purple button_submit" %></p>

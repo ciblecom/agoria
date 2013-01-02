@@ -1,7 +1,7 @@
 # encoding: UTF-8
 ActiveAdmin.register User do
   
-   member_action :active do
+  member_action :active do
     user = User.find(params[:id])
     user.active = 1
     UserMailer.active_email(user).deliver    
@@ -18,6 +18,18 @@ ActiveAdmin.register User do
     session[:return_to] ||= request.referer
     redirect_to(session[:return_to], :notice => "User correctement refusé!")
   end 
+  
+  
+  scope "Tous",:all, :default => true
+  scope "En attente",:pending do |users|
+    users.where("active = 0")
+  end 
+  scope "Acceptés",:accepted do |users|
+    users.where("active = 1")
+  end 
+  scope "Refusés",:refused do |users|
+     users.where("active = 2")
+  end
   
    index do
     column :email do |user|

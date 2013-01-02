@@ -8,14 +8,24 @@ class CalendarsController < ApplicationController
   end
   
   def show
+    
+    if params[:what] == 'calendar'
+      @source = 'calendars/show.pdf.erb'
+      @disposition = "Portrait"
+    else
+      @source = 'calendars/showposter.pdf.erb'
+      @orientation = "Landscape"
+    end
+    
     @calendar = Calendar.find(params[:id])
     @calname = @calendar.name+'_'+@calendar.id.to_s
     respond_to do |format|
       format.pdf do
-          render :page_size => "A3",
+          render :page_size => "A4",
                   :pdf => @calname,
-                  :disposition => 'attachment',
-                  :template => 'calendars/show.pdf.erb',
+                 # :disposition => 'attachment',
+                  :template => @source,
+                  :orientation => @orientation,
                   :save_to_file  => Rails.root.join('public/pdfs', "#{@calname}.pdf"),
                   :margin => {:top   => 2,
                              :bottom  => 2,
@@ -26,6 +36,7 @@ class CalendarsController < ApplicationController
       end
     end    
   end
+
 
   def new
     @calendar = Calendar.new
