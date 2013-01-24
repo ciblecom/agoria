@@ -39,8 +39,7 @@ class CalendarsController < ApplicationController
                              :left    => 2,
                              :right   => 2},
                   :no_background => false,
-                  :lowquality  => false,
-                  :show_as_html => true
+                  :lowquality  => false
       end
     end    
   end
