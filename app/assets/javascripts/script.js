@@ -23,6 +23,20 @@ $(document).ready(function () {
 	
  	displayAlert();
  	
+ 	$('input[type=radio]').each(function() { 
+	    if ($(this).is(':checked')){
+	    	$(this).parent('div').addClass('checked');
+	    }
+	});
+ 	
+ 	
+ 	
+    $('input[type=radio]').click(function () {
+        $('input[type=radio]').parent('div').removeClass('checked');
+        $(this).parent('div').addClass('checked');
+    });
+
+ 	
 	
 });
 

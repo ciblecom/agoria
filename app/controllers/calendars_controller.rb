@@ -2,6 +2,13 @@
 class CalendarsController < ApplicationController
   
   before_filter :authenticate_user!
+  before_filter :load
+
+  def load
+    @months = ['Janvier', 'Février' , 'Mars' , 'Avril' , 'Mai' , 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
+    @monthsclass = ['jan', 'fev' , 'mar' , 'avr' , 'mai' , 'jun', 'jui', 'aou', 'sep', 'oct', 'nov', 'dec']
+  end
+  
   
   def index
     @calendars = current_user.calendars.order('created_at DESC').all
@@ -32,7 +39,8 @@ class CalendarsController < ApplicationController
                              :left    => 2,
                              :right   => 2},
                   :no_background => false,
-                  :lowquality  => false
+                  :lowquality  => false,
+                  :show_as_html => true
       end
     end    
   end

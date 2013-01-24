@@ -2,7 +2,7 @@
   <% for calendar in @calendars %>
     <li>
 <b><%= calendar.name %></b><br>      
-<%= image_tag('visu1_small.jpg') %>
+<%= image_tag(calendar.month.to_s+'_small.jpg') %>
 <p class="actions">
 <%= link_to "Exporter Calendrier", calendar_path(calendar, :format => "pdf", :what => 'calendar'), :target => "_blank" %> - 
 <%= link_to "Exporter Affiche", calendar_path(calendar, :format => "pdf", :what => 'poster'), :target => "_blank" %><br>

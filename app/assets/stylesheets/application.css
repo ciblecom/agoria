@@ -197,9 +197,48 @@ background:#fff url(bgAll.jpg) top center repeat-y;
 	text-transform:uppercase;
 }
 
+.twoone label{
+	text-indent:-9999px;
+	display:block !important;
+	width:75px !important;
+	height:51px !important;
+	padding:0px !important;
+	margin:0px !important;
+}
 
+label.janvier{	
+	background:#fff url(1_xsmall.jpg) top left no-repeat !important;
+}
 
-.twoone img, .twotwo img{
+label.fevrier{	
+	background:#fff url(2_xsmall.jpg) top left no-repeat !important;
+}
+
+.twoone input[type="radio"] {display:none;}
+
+.twoone div.checked{ 
+    background-color:#8604A6 !important;
+    color:#fff;
+}
+
+ .thumber{
+	border:1px #c1c1c1 solid;
+	padding:2px;
+	display:inline-block;
+}
+
+ .thumber span{
+	display:block;
+	text-align:center;
+	font-weight:bold;
+}
+
+.twotwo img{
+	display:block;
+	border:2px #c1c1c1 solid;
+}
+
+.twoone img{
 	border:5px #c1c1c1 solid;
 }
 

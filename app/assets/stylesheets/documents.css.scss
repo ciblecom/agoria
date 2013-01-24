@@ -1,18 +1,21 @@
 .document {
  color:#fff;
- background:#cd592e !important;
+ 
 }
 
+.jan, .jan #banner, .jan #bannerPoster, .jan #calendar{background:#cd592e !important;}
+.fev, .fev #banner, .fev #bannerPoster, .fev #calendar{background:#00662f !important;}
+
+.jan #calendar td{color:#cd592e !important;}
+.fev #calendar td{color:#00662f !important;}
 
 #banner{
  margin: 15px 20px;
- background:#cd592e !important;
 }
 
 #bannerPoster{
  margin: 10px 0px;
  background:#fff !important;
- color:#cd592e  !important;
 }
 
 .description{
@@ -35,7 +38,7 @@ text-transform:uppercase;
 
 }
 
-#calendar{margin:15px 25px; background:#cd592e;}
+#calendar{margin:15px 25px;}
 
 #calendar th{ 
   width:121px !important; 
@@ -54,7 +57,6 @@ text-transform:uppercase;
   margin:5px  !important; 
   vertical-align:top  !important;  
   padding:7px 10px  !important; 
-  color:#cd592e  !important;
   font: normal 12px/1em 'Lato' !important
   }
 #calendar td.off{ background:#c7c8ca  !important; color:#6d6e71  !important;}
