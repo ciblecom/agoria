@@ -53,7 +53,12 @@ class CalendarsController < ApplicationController
   def create
     @calendar = current_user.calendars.new(params[:calendar])
     if @calendar.logo.to_s == "logono.gif"
-       @calendar.description = "<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. <br>Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.<br>Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>"
+      if @calendar.month == 1
+        @calendar.description = "<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. <br>Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.<br>Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>"
+      end
+      if @calendar.month == 2
+        @calendar.description = "<b>Sans idées neuves, sans initiative, notre emploi est fragilisé.</b><br>Nous sommes tous fournisseurs de bonnes idées qui font avancer notre entreprise.<br>Respectons les idées de chacun, soutenons les initiatives et les investissements de tous niveaux.<br>Tout ce qui fait avancer notre entreprise la fait grandir et la rend plus solide.<b>Mon emploi en dépend !</b>"
+      end
     end
     if @calendar.save
       redirect_to calendars_url, :notice => "Calendrier correctement créé."
@@ -70,7 +75,12 @@ class CalendarsController < ApplicationController
   def update
     @calendar = Calendar.find(params[:id])
     if params[:calendar][:logo].nil?
-       params[:calendar][:description] = "<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. <br>Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.<br>Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>"
+      if params[:calendar][:month] == 1
+        params[:calendar][:description] = "<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. <br>Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.<br>Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>"
+      end
+      if params[:calendar][:month] == 2
+        params[:calendar][:description] = "<b>Sans idées neuves, sans initiative, notre emploi est fragilisé.</b><br>Nous sommes tous fournisseurs de bonnes idées qui font avancer notre entreprise.<br>Respectons les idées de chacun, soutenons les initiatives et les investissements de tous niveaux.<br>Tout ce qui fait avancer notre entreprise la fait grandir et la rend plus solide.<b>Mon emploi en dépend !</b>"
+      end
     end
     if @calendar.update_attributes(params[:calendar])
       redirect_to calendars_url, :notice  => "Calendrier correctement mis à jour."
