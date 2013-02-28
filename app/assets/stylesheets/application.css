@@ -177,6 +177,12 @@ background:#fff url(bgAll.jpg) top center repeat-y;
    vertical-align:top;
 }
 
+.twotwo{
+
+   width:262px;
+
+}
+
 .lt-ie8 .twoone,.lt-ie8  .twotwo{
 	zoom:1;
    display: inline;
@@ -212,6 +218,10 @@ label.janvier{
 
 label.fevrier{	
 	background:#fff url(2_xsmall.jpg) top left no-repeat !important;
+}
+
+label.mars{	
+	background:#fff url(3_xsmall.jpg) top left no-repeat !important;
 }
 
 .twoone input[type="radio"] {display:none;}

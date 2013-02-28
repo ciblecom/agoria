@@ -46,7 +46,10 @@ $(document).ready(function () {
 	    	if ($(this).val() == 2){
 	    		$("#calendar_description").val("<b>Sans idées neuves, sans initiative, notre emploi est fragilisé.</b><br>Nous sommes tous fournisseurs de bonnes idées qui font avancer notre entreprise.<br>Respectons les idées de chacun, soutenons les initiatives et les investissements de tous niveaux.<br>Tout ce qui fait avancer notre entreprise la fait grandir et la rend plus solide.<b>Mon emploi en dépend !</b>");
 	    		romer.html("<b>Sans idées neuves, sans initiative, notre emploi est fragilisé.</b><br>Nous sommes tous fournisseurs de bonnes idées qui font avancer notre entreprise.<br>Respectons les idées de chacun, soutenons les initiatives et les investissements de tous niveaux.<br>Tout ce qui fait avancer notre entreprise la fait grandir et la rend plus solide.<b>Mon emploi en dépend !</b>");
-	    	
+	    	}
+	    	if ($(this).val() == 3){
+	    		$("#calendar_description").val("<b>Il ne faut pas avoir peur du changement.</b><br>Se remettre en question, revoir ses processus, ses méthodes, ses objectifs…<br>C’est souvent faire preuve de bon sens pour anticiper l’avenir.<br>Dans l’industrie, la marche arrière n’existe pas.<br>Il faut aller de l’avant en se posant les bonnes questions sur l’avenir.<br><b>Mon emploi en dépend !</b>");
+	    		romer.html("<b>Il ne faut pas avoir peur du changement.</b><br>Se remettre en question, revoir ses processus, ses méthodes, ses objectifs…<br>C’est souvent faire preuve de bon sens pour anticiper l’avenir.<br>Dans l’industrie, la marche arrière n’existe pas.<br>Il faut aller de l’avant en se posant les bonnes questions sur l’avenir.<br><b>Mon emploi en dépend !</b>");
 	    	}
     });
 

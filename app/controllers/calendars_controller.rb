@@ -34,6 +34,7 @@ class CalendarsController < ApplicationController
                   :template => @source,
                   :orientation => @orientation,
                   :save_to_file  => Rails.root.join('public/pdfs', "#{@calname}.pdf"),
+                  #:show_as_html  => true,
                   :margin => {:top   => 2,
                              :bottom  => 2,
                              :left    => 2,
@@ -59,6 +60,9 @@ class CalendarsController < ApplicationController
       if @calendar.month == 2
         @calendar.description = "<b>Sans idées neuves, sans initiative, notre emploi est fragilisé.</b><br>Nous sommes tous fournisseurs de bonnes idées qui font avancer notre entreprise.<br>Respectons les idées de chacun, soutenons les initiatives et les investissements de tous niveaux.<br>Tout ce qui fait avancer notre entreprise la fait grandir et la rend plus solide.<b>Mon emploi en dépend !</b>"
       end
+      if @calendar.month == 3
+        @calendar.description = "<b>Il ne faut pas avoir peur du changement.</b><br>Se remettre en question, revoir ses processus, ses méthodes, ses objectifs…<br>C’est souvent faire preuve de bon sens pour anticiper l’avenir.<br>Dans l’industrie, la marche arrière n’existe pas.<br>Il faut aller de l’avant en se posant les bonnes questions sur l’avenir.<br><b>Mon emploi en dépend !</b>"
+      end
     end
     if @calendar.save
       redirect_to calendars_url, :notice => "Calendrier correctement créé."
@@ -80,6 +84,9 @@ class CalendarsController < ApplicationController
       end
       if params[:calendar][:month] == 2
         params[:calendar][:description] = "<b>Sans idées neuves, sans initiative, notre emploi est fragilisé.</b><br>Nous sommes tous fournisseurs de bonnes idées qui font avancer notre entreprise.<br>Respectons les idées de chacun, soutenons les initiatives et les investissements de tous niveaux.<br>Tout ce qui fait avancer notre entreprise la fait grandir et la rend plus solide.<b>Mon emploi en dépend !</b>"
+      end
+      if params[:calendar][:month] == 3
+        params[:calendar][:description] = "<b>Il ne faut pas avoir peur du changement.</b><br>Se remettre en question, revoir ses processus, ses méthodes, ses objectifs…<br>C’est souvent faire preuve de bon sens pour anticiper l’avenir.<br>Dans l’industrie, la marche arrière n’existe pas.<br>Il faut aller de l’avant en se posant les bonnes questions sur l’avenir.<br><b>Mon emploi en dépend !</b>"
       end
     end
     if @calendar.update_attributes(params[:calendar])
