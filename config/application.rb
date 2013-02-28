@@ -38,6 +38,9 @@ module Agoria
     # Heroku requires this to be false
     config.assets.initialize_on_precompile=false
 
+    # Precompile additional assets. Defaults to [application.js, application.css, non-JS/CSS]
+    config.assets.precompile += ['active_admin.css', 'active_admin/print.css', 'active_admin.js']
+    
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
