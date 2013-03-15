@@ -12,9 +12,7 @@
     		<tr>
     			<td width='180'>
     				<% if @calendar.logo.medium.to_s != "medium_logono.gif" %>
-    				
     				 	<%= image_tag(@calendar.logo.medium.to_s, :width => "150") %>
-    				 	
     				<%end%>
     			</td>
     			<td align="right" valign="top" class="description"><%=@calendar.description.html_safe%></td>
@@ -29,8 +27,8 @@
 	   <th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th> <th>Vendredi</th><th>Samedi</th><th>Dimanche</th>
 	</tr>
 	<tr>
-		<% @beginning_of_month = Date.civil(2013, 1, 1) %>
-		<% @end_of_month = Date.civil(2013, 1, -1) %>
+		<% @beginning_of_month = Date.civil(2013, @calendar.month, 1) %>
+		<% @end_of_month = Date.civil(2013, @calendar.month, -1) %>
 		<% (@beginning_of_month..@end_of_month).each do |d| %>
 		<% if d == @beginning_of_month %>
 		<% @wdays = d.wday-1 %>
