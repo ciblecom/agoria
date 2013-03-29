@@ -51,6 +51,10 @@ $(document).ready(function () {
 	    		$("#calendar_description").val("<b>Il ne faut pas avoir peur du changement.</b><br>Se remettre en question, revoir ses processus, ses méthodes, ses objectifs…<br>C’est souvent faire preuve de bon sens pour anticiper l’avenir.<br>Dans l’industrie, la marche arrière n’existe pas.<br>Il faut aller de l’avant en se posant les bonnes questions sur l’avenir.<br><b>Mon emploi en dépend !</b>");
 	    		romer.html("<b>Il ne faut pas avoir peur du changement.</b><br>Se remettre en question, revoir ses processus, ses méthodes, ses objectifs…<br>C’est souvent faire preuve de bon sens pour anticiper l’avenir.<br>Dans l’industrie, la marche arrière n’existe pas.<br>Il faut aller de l’avant en se posant les bonnes questions sur l’avenir.<br><b>Mon emploi en dépend !</b>");
 	    	}
+	    	if ($(this).val() == 4){
+	    		$("#calendar_description").val("<b>Eviter les accidents et veiller au bien-être individuel et collectif sont des priorités absolues.</b><br>Dans l’industrie, on a besoin de toutes les forces vives. D’une disponibilité totale de toutes les équipes.<br>Nous devons tous être sur le pont au bon moment. La sécurité au travail est l’une des manières de répondre «présent» aux demandes de nos clients.<br><b>Mon emploi en dépend !</b>");
+	    		romer.html("<b>Eviter les accidents et veiller au bien-être individuel et collectif sont des priorités absolues.</b><br>Dans l’industrie, on a besoin de toutes les forces vives. D’une disponibilité totale de toutes les équipes.<br>Nous devons tous être sur le pont au bon moment. La sécurité au travail est l’une des manières de répondre «présent» aux demandes de nos clients.<br><b>Mon emploi en dépend !</b>");
+	    	}
     });
 
  	

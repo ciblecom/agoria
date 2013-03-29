@@ -224,6 +224,10 @@ label.mars{
 	background:#fff url(3_xsmall.jpg) top left no-repeat !important;
 }
 
+label.avril{	
+	background:#fff url(4_xsmall.jpg) top left no-repeat !important;
+}
+
 .twoone input[type="radio"] {display:none;}
 
 .twoone div.checked{ 
@@ -235,6 +239,7 @@ label.mars{
 	border:1px #c1c1c1 solid;
 	padding:2px;
 	display:inline-block;
+	margin:1px 0;
 }
 
  .thumber span{

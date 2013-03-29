@@ -22,6 +22,9 @@
   	<div class="twoone">
   		<h3 >Sélectionner le calendrier et le thème du mois</h3>
   		
+  		<div class="thumber"><%= f.label "month_4", "Mars", :class => "avril" %>
+  		<%= radio_button('calendar',"month", 4, :class => "avril") %><span>Avril</span></div>
+  		
   		<div class="thumber"><%= f.label "month_3", "Mars", :class => "mars" %>
   		<%= radio_button('calendar',"month", 3, :class => "mars") %><span>Mars</span></div>
   		
@@ -34,6 +37,7 @@
   	</div>
   	<div class="twotwo">
   		<h3 >télécharger uniquement l'affiche</h3>
+  		<div class="thumber"><%= link_to(image_tag('4_xsmall.jpg'), "/avril_visu.pdf", :target => "_blank") %><span>Avril</span></div>
   		<div class="thumber"><%= link_to(image_tag('3_xsmall.jpg'), "/mars_visu.pdf", :target => "_blank") %><span>Mars</span></div>
   		<div class="thumber"><%= link_to(image_tag('2_xsmall.jpg'), "/fevrier_visu.pdf", :target => "_blank") %><span>Février</span></div>
   		<div class="thumber"><%= link_to(image_tag('1_xsmall.jpg'), "/janvier_visu.pdf", :target => "_blank") %><span>Janvier</span></div>
