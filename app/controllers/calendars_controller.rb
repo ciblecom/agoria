@@ -24,7 +24,7 @@ class CalendarsController < ApplicationController
       @orientation = "Landscape"
     end
     
-    @calendar = Calendar.find(params[:id])
+    @calendar = Calendar.find(params[:id].to_i)
     @calname = @calendar.name+'_'+@calendar.id.to_s
     respond_to do |format|
       format.pdf do
