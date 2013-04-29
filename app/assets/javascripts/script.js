@@ -55,6 +55,10 @@ $(document).ready(function () {
 	    		$("#calendar_description").val("<b>Eviter les accidents et veiller au bien-être individuel et collectif sont des priorités absolues.</b><br>Dans l’industrie, on a besoin de toutes les forces vives. D’une disponibilité totale de toutes les équipes.<br>Nous devons tous être sur le pont au bon moment. La sécurité au travail est l’une des manières de répondre «présent» aux demandes de nos clients.<br><b>Mon emploi en dépend !</b>");
 	    		romer.html("<b>Eviter les accidents et veiller au bien-être individuel et collectif sont des priorités absolues.</b><br>Dans l’industrie, on a besoin de toutes les forces vives. D’une disponibilité totale de toutes les équipes.<br>Nous devons tous être sur le pont au bon moment. La sécurité au travail est l’une des manières de répondre «présent» aux demandes de nos clients.<br><b>Mon emploi en dépend !</b>");
 	    	}
+	    	if ($(this).val() == 5){
+	    		$("#calendar_description").val("Les règles sont là pour établir les bases d’un dialogue propice à l’efficacité.<br>Elles ne sont pas là pour nous embêter. Nous avons une obligation de résultat vis-à-visde nos clients. Une obligation qui nous lie. <br>Sachons accorder nos violons et respectons nos engagements pour aller de l’avant. <br>Parce que se faire entendre, c’est bien. Respecter ses engagements, c’est mieux<br><b>Mon emploi en dépend !</b>");
+	    		romer.html("Les règles sont là pour établir les bases d’un dialogue propice à l’efficacité.<br>Elles ne sont pas là pour nous embêter. Nous avons une obligation de résultat vis-à-visde nos clients. Une obligation qui nous lie. <br>Sachons accorder nos violons et respectons nos engagements pour aller de l’avant. <br>Parce que se faire entendre, c’est bien. Respecter ses engagements, c’est mieux<br><b>Mon emploi en dépend !</b>");
+	    	}
     });
 
  	
