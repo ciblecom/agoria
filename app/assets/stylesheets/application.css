@@ -232,6 +232,11 @@ label.mai{
 	background:#fff url(5_xsmall.jpg) top left no-repeat !important;
 }
 
+label.juin{	
+	background:#fff url(6_xsmall.jpg) top left no-repeat !important;
+}
+
+
 .twoone input[type="radio"] {display:none;}
 
 .twoone div.checked{ 

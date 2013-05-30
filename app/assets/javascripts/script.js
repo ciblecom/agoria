@@ -39,6 +39,7 @@ $(document).ready(function () {
         $("#calendar_description").val('');
         romer = $("#cke_1_contents iframe").contents().find("body");
 		romer.empty();
+		
 	    	if ($(this).val() == 1){
 	    		$("#calendar_description").val("<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. <br>Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.<br>Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>");
 	    		romer.html("<b>Pour préserver notre emploi, nous devons satisfaire le client.</b><br> C’est vital pour la survie de l'entreprise. Sans lui, pas de travail. Et sans travail, pas d'emploi. <br>Nous devons être capables d'adapter notre comportement, voire même notre manière de fonctionner.<br>Parce que nous sommes au service du client. Pas l'inverse. <br><b>Mon emploi en dépend !</b>");
@@ -58,6 +59,10 @@ $(document).ready(function () {
 	    	if ($(this).val() == 5){
 	    		$("#calendar_description").val("Les règles sont là pour établir les bases d’un dialogue propice à l’efficacité.<br>Elles ne sont pas là pour nous embêter. Nous avons une obligation de résultat vis-à-visde nos clients. Une obligation qui nous lie. <br>Sachons accorder nos violons et respectons nos engagements pour aller de l’avant. <br>Parce que se faire entendre, c’est bien. Respecter ses engagements, c’est mieux<br><b>Mon emploi en dépend !</b>");
 	    		romer.html("Les règles sont là pour établir les bases d’un dialogue propice à l’efficacité.<br>Elles ne sont pas là pour nous embêter. Nous avons une obligation de résultat vis-à-visde nos clients. Une obligation qui nous lie. <br>Sachons accorder nos violons et respectons nos engagements pour aller de l’avant. <br>Parce que se faire entendre, c’est bien. Respecter ses engagements, c’est mieux<br><b>Mon emploi en dépend !</b>");
+	    	}
+	    	if ($(this).val() == 6){
+	    		$("#calendar_description").val("<b>La qualité est une condition sine qua non (nécessaire, indiscutable) à toute activité industrielle.</b><br> C’est un sujet qui ne se prête pas à la discussion et pour lequel le client ne négocie jamais.<br>Dans notre façon de travailler, le mieux n’est qu’une étape. Nous devons, sans relâche, tout mettre<br>en oeuvre pour atteindre un niveau de qualité irréprochable.<br><b>Mon emploi en dépend !</b>");
+	    		romer.html("<b>La qualité est une condition sine qua non (nécessaire, indiscutable) à toute activité industrielle.</b><br> C’est un sujet qui ne se prête pas à la discussion et pour lequel le client ne négocie jamais.<br>Dans notre façon de travailler, le mieux n’est qu’une étape. Nous devons, sans relâche, tout mettre<br>en oeuvre pour atteindre un niveau de qualité irréprochable.<br><b>Mon emploi en dépend !</b>");
 	    	}
     });
 
